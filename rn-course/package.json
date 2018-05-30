@@ -8,16 +8,20 @@
   "scripts": {
     "start": "react-native start",
     "android": "react-native run-android",
+    "android:emulator": "$ANDROID_HOME/tools/emulator @Nexus_5X_API_23 -netdelay none -netspeed full",
     "ios": "react-native run-ios",
     "test": "jest",
-    "android:clean": "cd android & gradlew clean",
-    "shake": " adb shell input keyevent 82"
+    "android:clean": "cd android && ./gradlew clean",
+    "shake": " adb shell input keyevent 82",
+    "clean:android": "cd android/ && ./gradlew clean && cd .. && react-native run-android"
   },
   "jest": {
     "preset": "react-native"
   },
   "dependencies": {
     "react": "16.3.1",
-    "react-native": "~0.55.2"
+    "react-native": "~0.55.2",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2"
   }
 }
